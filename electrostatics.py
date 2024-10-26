@@ -21,9 +21,9 @@ import functools
 import numpy
 from numpy import array, arange, linspace, meshgrid, zeros_like, ones_like
 from numpy import log10, sin, cos, arctan2, arccos, sqrt, fabs, cumsum
-from numpy import radians, pi, infty
+from numpy import radians, pi, inf
 from numpy import dot, cross
-from numpy import alltrue, isclose
+from numpy import all, isclose
 from numpy import where, insert
 from numpy import newaxis
 from numpy.linalg import det
@@ -191,7 +191,7 @@ class LineCharge:
 
         # pylint: disable=invalid-name, invalid-unary-operand-type
         Epara = lam*(1/r2-1/r1)
-        Eperp = -sign*lam*(cos(theta2)-cos(theta1))/where(a == 0, infty, a)
+        Eperp = -sign*lam*(cos(theta2)-cos(theta1))/where(a == 0, inf, a)
 
         # Transform into the coordinate space and return
         dx = x2 - x1
@@ -431,7 +431,7 @@ class GaussianCircle:
 
             if numpy.sum(flux) < 0:
                 flux *= -1
-            assert alltrue(flux > 0)
+            assert all(flux > 0)
 
         # Create an integrated flux curve
         intflux = insert(cumsum((flux[:-1]+flux[1:])/2), 0, 0)
