@@ -28,14 +28,14 @@ from electrostatics import finalize_plot
 
 XMIN, XMAX = -40, 40
 YMIN, YMAX = -30, 30
-ZOOM = 6
+ZOOM = 8
 XOFFSET = 0
 
 electrostatics.init(XMIN, XMAX, YMIN, YMAX, ZOOM, XOFFSET)
 
 # Set up the charges, electric field, and potential
-charges = [PointCharge(1, [-1, 0]),
-           PointCharge(-1, [1, 0])]
+charges = [PointCharge(-1, [-0.5, 0]),
+           PointCharge(1, [0.5, 0])]
 field = ElectricField(charges)
 potential = Potential(charges)
 
@@ -44,7 +44,7 @@ g = GaussianCircle(charges[0].x, 0.1)
 
 # Create the field lines
 fieldlines = []
-for x in g.fluxpoints(field, 12):
+for x in g.fluxpoints(field, 14):
     fieldlines.append(field.line(x))
 fieldlines.append(field.line([10, 0]))
 
