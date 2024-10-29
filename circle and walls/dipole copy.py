@@ -34,8 +34,10 @@ XOFFSET = 0
 electrostatics.init(XMIN, XMAX, YMIN, YMAX, ZOOM, XOFFSET)
 
 # Set up the charges, electric field, and potential
-charges = [PointCharge(-1, [-0.5, 0]),
-           PointCharge(1, [0.5, 0])]
+charges = [PointCharge(1.5, [0, -2]),
+           PointCharge(1.5, [0, 2]),
+           PointCharge(-1.5, [0, -2.5]),
+           PointCharge(-1.5, [0, 2.5])]
 field = ElectricField(charges)
 potential = Potential(charges)
 
