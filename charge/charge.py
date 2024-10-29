@@ -21,7 +21,7 @@ from matplotlib import pyplot
 import numpy
 
 import electrostatics
-from electrostatics import PointCharge, ElectricField, Potential, GaussianCircle, LineCharge
+from electrostatics import PointCharge, ElectricField, Potential, GaussianCircle
 from electrostatics import finalize_plot
 
 # pylint: disable=invalid-name
