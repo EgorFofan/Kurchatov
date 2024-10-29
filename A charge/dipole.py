@@ -85,3 +85,4 @@ finalize_plot()
 #fig.savefig('dipole-field-vectors.pdf', transparent=True)
 
 pyplot.show()
+#ZOV
